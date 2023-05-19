@@ -51,7 +51,8 @@ def zipper(*args):
         <p> ds (jwt):{jac.json()}</p>
         <p> valid files: {vf}</div>
     <div></div></body></html>"""
-    if len(vf)<5:
+    if 0==1 and len(vf)<5:
+        # currently not working (needs Frontend adjustments, see https://pspdfkit.com/blog/2022/how-to-download-multiple-files-javascript/)
         return get_multiple_files(vf,directory)
 
     return get_zip_file(vf,directory)
