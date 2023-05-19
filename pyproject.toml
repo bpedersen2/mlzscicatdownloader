@@ -1,8 +1,10 @@
 [build-system]
 requires = [
   "setuptools>=55",
-  "setuptools_scm[toml]>=6.2"
+  "setuptools_scm[toml]>=6.2","wheel"
 ]
+build-backend = "setuptools.build_meta"
+
 
 [project]
 name = "scicatdownloader"
@@ -13,9 +15,13 @@ authors = [
     {name="Bjoern Pedersen", email="bjoern.pedersen@frm2.tum.de"}
 ]
 requires-python = ">=3.7"
-requires = [
+dependencies = [
    "Flask",
    "PyJWT",
+   "requests",
+   "boto3",
+   "zipstream-ng>=1.5",
+   "requests-toolbelt",
   ]
 dynamic = [
   "version",

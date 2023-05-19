@@ -1,9 +1,9 @@
 FROM docker.ictrl.frm2.tum.de:5443/docker_proxy/library/python:3.11
 
 RUN mkdir /app
-COPY *.py /app/
-RUN pip install flask uwsgi
+COPY . /app/
+RUN pip install -e /app
 WORKDIR /app
 
-ENTRYPOINT flask
-CMD ['run', '-h', '0.0.0.0:3000']
+CMD ["--app", "scicatdownloader.wsgi",  "run",  "-h", "0.0.0.0",  "-p" ,"3000"]
+ENTRYPOINT ["flask"]

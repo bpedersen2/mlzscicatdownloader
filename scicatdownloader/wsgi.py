@@ -1,1 +1,1 @@
-from downloader import app
+from .downloader import app

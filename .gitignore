@@ -1,2 +1,7 @@
 __pycache__/
 .python-version
+*.egg-info
+scicatdownloader/version.py
+dist/
+.vscode
+.env
